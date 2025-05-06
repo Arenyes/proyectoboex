@@ -1,0 +1,304 @@
+/* VARIABLES FIBONACCI */
+:root {
+    --fib-61: 61.8%;
+    --fib-38: 38.2%;
+    --fib-23: 23.6%;
+    --fib-14: 14.6%;
+    --fib-9: 9%;
+    --fib-5: 5.6%;
+    --fib-3: 3.5%;
+    --fib-2: 2.1%;
+}
+
+/* VARIABLES DE COLORES */
+:root {
+    --morado: rgb(79, 40, 80); /* Morado intenso */
+    --verde-complementario: #CFFF9D; /* Verde complementario */
+    --gris-claro: #f9f9f9;
+    --gris-oscuro: #333;
+}
+
+/* ESTILOS GENERALES */
+body {
+    font-family: 'Encode Sans', Verdana, sans-serif; /* Fuente moderna y legible */
+    font-size: 18px; /* Tamaño de fuente */
+    line-height: 1.56; /* Interlineado */
+    color: var(--gris-oscuro); /* Color general del texto */
+    background: url('../img/pues.jpg') no-repeat center center fixed; /* Imagen centrada */
+    background-size: cover; /* Escala la imagen para cubrir todo el ancho y alto */
+    margin: 0;
+    padding: 0; /* Elimina cualquier padding del body */
+}
+
+.titulo-dorado {
+    font-family: 'Encode Sans', Verdana, sans-serif;
+    font-weight: 700; /* Grosor para destacar */
+    font-size: 2rem;
+    text-align: center;
+    color: white;
+    background: var(--morado);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.titulo-imagen {
+    display: block;
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+    max-width: 70%; /* Reduce el ancho máximo al 70% del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+h2, h3, h4 {
+    font-family: 'Encode Sans', Verdana, sans-serif;
+    font-weight: 700;
+}
+
+/* DISEÑO PORTADA FIBONACCI */
+.contenedor-fibonacci {
+    display: grid;
+    grid-template-areas:
+        "principal secundaria1"
+        "principal secundaria2"
+        "terciarias terciarias";
+    grid-template-columns: var(--fib-61) var(--fib-38);
+    gap: 15px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+}
+
+.noticia-principal {
+    grid-area: principal;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-left: 5px solid var(--morado); /* Detalle morado */
+}
+
+.noticia-principal:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    border-left: 5px solid var(--verde-complementario); /* Cambia a verde al pasar el mouse */
+}
+
+.noticia-secundaria {
+    background: white;
+    padding: 1rem;
+    border-radius: 6px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-left: 4px solid var(--morado); /* Detalle morado */
+}
+
+.noticia-secundaria:nth-child(2) {
+    grid-area: secundaria1;
+}
+
+.noticia-secundaria:nth-child(3) {
+    grid-area: secundaria2;
+}
+
+.noticia-secundaria:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    border-left: 4px solid var(--verde-complementario); /* Cambia a verde al pasar el mouse */
+}
+
+.noticia-terciaria {
+    background: white;
+    padding: 0.8rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s;
+    border-left: 3px solid var(--morado); /* Detalle morado */
+}
+
+.noticia-terciaria:nth-child(4) {
+    grid-area: terciaria1;
+    width: var(--fib-23);
+}
+
+.noticia-terciaria:nth-child(5) {
+    grid-area: terciaria2;
+    width: var(--fib-14);
+}
+
+.noticia-terciaria:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    border-left: 3px solid var(--verde-complementario); /* Cambia a verde al pasar el mouse */
+}
+
+/* EFECTOS HOVER */
+.noticia-principal:hover,
+.noticia-secundaria:hover,
+.noticia-terciaria:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* MODAL DE NOTICIA COMPLETA */
+.modal-noticia {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.modal-contenido {
+    background: white;
+    width: 85%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 8px;
+    font-family: 'Georgia', serif;
+    line-height: 1.7;
+    border: 3px solid var(--morado); /* Borde morado */
+}
+
+/* Corrección clave: Usar ID en lugar de clase para el título */
+#modal-titulo {
+    font-family: 'Encode Sans', Verdana, sans-serif; /* Aplicamos Encode Sans */
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--morado); /* Título en morado */
+    font-weight: bold;
+}
+
+/* Subtítulos */
+.modal-subtitulo {
+    font-family: 'Encode Sans', Verdana, sans-serif; /* Aplicamos Encode Sans */
+    font-weight: 400; /* Peso normal */
+    font-size: 1.2rem;
+    text-align: center;
+    color: black; /* Cambiamos el color a negro */
+    margin-bottom: 2rem;
+    line-height: 1.5;
+}
+
+.modal-meta {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1rem;
+}
+
+/* Estilos para el cuerpo - más específicos */
+.modal-cuerpo {
+    font-family: 'Georgia', serif;
+    font-size: 1.1rem;
+    font-weight: normal;
+    line-height: 1.7;
+    color: #333;
+}
+
+.modal-cuerpo p {
+    font-size: 1.1rem;
+    font-weight: normal;
+    margin-bottom: 1.5rem;
+}
+
+.modal-cuerpo ul {
+    margin: 1.5rem 0;
+    padding-left: 2rem;
+    list-style-type: disc;
+}
+
+.modal-cuerpo li {
+    margin-bottom: 0.75rem;
+    font-weight: normal;
+}
+
+.cerrar-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--morado); /* Botón cerrar en morado */
+}
+
+.cerrar-modal:hover {
+    color: var(--verde-complementario); /* Cambia a verde al pasar el mouse */
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .contenedor-fibonacci {
+        grid-template-areas:
+            "principal"
+            "secundaria1"
+            "secundaria2"
+            "terciaria1"
+            "terciaria2";
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-contenido {
+        width: 95%;
+        padding: 1rem;
+    }
+}
+/* CORRECCIONES FINALES PARA EL MODAL */
+#modal-titulo {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.modal-cuerpo {
+    font-size: 1rem !important;
+    font-weight: normal !important;
+}
+
+.modal-cuerpo p,
+.modal-cuerpo ul,
+.modal-cuerpo li {
+    font-size: inherit;
+    font-weight: normal;
+}
+
+.modal-cuerpo p {
+    margin: 1rem 0;
+    line-height: 1.6;
+}
+
+.modal-cuerpo ul {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+.fila-terciarias {
+    grid-area: terciarias;
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.noticia-terciaria {
+    flex: 1;
+    min-width: 0; /* Permite que los textos no desborden */
+    /* Hereda automáticamente hover/bordes de tu CSS actual */
+}
+
+/* Asignamos proporciones Fibonacci */
+.noticia-terciaria:nth-child(1) { flex: var(--fib-23); }
+.noticia-terciaria:nth-child(2) { flex: var(--fib-14); }
+.noticia-terciaria:nth-child(3) { flex: var(--fib-9); }
+.noticia-terciaria:nth-child(4) { flex: var(--fib-5); }
+.noticia-terciaria:nth-child(5) { flex: var(--fib-3); }
