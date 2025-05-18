@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UN BOLETÍN EXTRAORDINARIO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/estilo-movil.css">
+</head>
+<body>
+    <!-- CABECERA -->
+    <header class="cabecera">
+        <img src="../img/pues4.png" alt="UN BOLETÍN EXTRAORDINARIO" class="logo">
+        <h2 class="subtitulo">La publicación que a veces sí, a veces no.</h2>
+    </header>
+
+    <!-- CONTENEDOR PRINCIPAL -->
+    <div class="contenedor">
+        <!-- NOTICIA PRINCIPAL -->
+        <article class="noticia" data-noticia="principal">
+            <h2 id="titulo-principal">Cargando título...</h2>
+            <p id="extracto-principal" class="extracto">Cargando extracto...</p>
+            <button class="boton-leer">Leer más</button>
+        </article>
+        
+        <!-- NOTICIAS SECUNDARIAS -->
+        <article class="noticia" data-noticia="secundaria1">
+            <h3 id="titulo-secundaria-1">Cargando título...</h3>
+            <p id="extracto-secundaria-1" class="extracto">Cargando extracto...</p>
+            <button class="boton-leer">Leer más</button>
+        </article>
+        
+        <article class="noticia" data-noticia="secundaria2">
+            <h3 id="titulo-secundaria-2">Cargando título...</h3>
+            <p id="extracto-secundaria-2" class="extracto">Cargando extracto...</p>
+            <button class="boton-leer">Leer más</button>
+        </article>
+        
+        <!-- NOTICIAS TERCIARIAS -->
+        <div class="seccion-terciarias">
+            <h3 class="titulo-seccion">Más noticias</h3>
+            <article class="noticia-mini" data-noticia="terciaria1">
+                <h4 id="titulo-terciaria-1">Cargando título...</h4>
+            </article>
+            
+            <article class="noticia-mini" data-noticia="terciaria2">
+                <h4 id="titulo-terciaria-2">Cargando título...</h4>
+            </article>
+            
+            <article class="noticia-mini" data-noticia="terciaria3">
+                <h4 id="titulo-terciaria-3">Cargando título...</h4>
+            </article>
+            
+            <article class="noticia-mini" data-noticia="terciaria4">
+                <h4 id="titulo-terciaria-4">Cargando título...</h4>
+            </article>
+            
+            <article class="noticia-mini" data-noticia="terciaria5">
+                <h4 id="titulo-terciaria-5">Cargando título...</h4>
+            </article>
+        </div>
+    </div>
+
+    <!-- MODAL PARA NOTICIAS COMPLETAS -->
+    <div class="modal" id="modal">
+        <div class="modal-contenido">
+            <button class="cerrar-modal">×</button>
+            <h2 id="modal-titulo"></h2>
+            <p class="modal-subtitulo" id="modal-subtitulo"></p>
+            <div class="modal-meta" id="modal-meta"></div>
+            <div class="modal-cuerpo" id="modal-cuerpo"></div>
+        </div>
+    </div>
+
+    <footer class="pie">
+        <p> UN BOLETÍN EXTRAORDINARIO - <a href="../index.html">Ver versión escritorio</a></p>
+    </footer>
+
+    <script src="js/scripts-movil.js"></script>
+
+</body>
+</html>
