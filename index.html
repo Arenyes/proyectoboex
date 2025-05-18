@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UN BOLETÍN EXTRAORDINARIO</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- PORTADA -->
+    <header class="titulo-dorado">
+        <img src="img/pues4.png" alt="UN BOLETÍN EXTRAORDINARIO" class="titulo-imagen">
+        <h2>La publicación que a veces sí, a veces no.</h2>
+    </header>
+
+    <div class="contenedor-fibonacci">
+        <!-- Noticia principal (61.8%) -->
+        <div class="noticia-principal" data-noticia="principal">
+            <h2 id="titulo-principal">Título principal</h2>
+            <div class="extracto-principal" id="extracto-principal"></div>
+        </div>
+
+        <!-- Noticias secundarias (38.2%) -->
+        <div class="noticia-secundaria" data-noticia="secundaria1">
+            <h3 id="titulo-secundaria-1">Título secundario 1</h3>
+            <p class="extracto-secundario" id="extracto-secundaria-1"></p>
+        </div>
+
+        <div class="noticia-secundaria" data-noticia="secundaria2">
+            <h3 id="titulo-secundaria-2">Título secundario 2</h3>
+            <p class="extracto-secundario" id="extracto-secundaria-2"></p>
+        </div>
+
+        <!-- Noticias terciarias (adaptadas al sistema principal) -->
+        <div class="fila-terciarias">
+            <article class="noticia-terciaria" data-noticia="terciaria1">
+                <h4 id="titulo-terciaria-1">Título breve 1</h4>
+            </article>
+            <article class="noticia-terciaria" data-noticia="terciaria2">
+                <h4 id="titulo-terciaria-2">Título breve 2</h4>
+            </article>
+            <article class="noticia-terciaria" data-noticia="terciaria3">
+                <h4 id="titulo-terciaria-3">Título breve 3</h4>
+            </article>
+            <article class="noticia-terciaria" data-noticia="terciaria4">
+                <h4 id="titulo-terciaria-4">Título breve 4</h4>
+            </article>
+            <article class="noticia-terciaria" data-noticia="terciaria5">
+                <h4 id="titulo-terciaria-5">Título breve 5</h4>
+            </article>
+        </div>
+    </div>
+
+    <!-- MODAL PARA NOTICIAS COMPLETAS -->
+    <div class="modal-noticia" id="modal">
+        <div class="modal-contenido">
+            <button class="cerrar-modal">×</button>
+            <h2 id="modal-titulo"></h2>
+            <p class="modal-subtitulo" id="modal-subtitulo"></p>
+            <div class="modal-meta" id="modal-meta"></div>
+            <div class="modal-cuerpo" id="modal-cuerpo"></div>
+        </div>
+    </div>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>
