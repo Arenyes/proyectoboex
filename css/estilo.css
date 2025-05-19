@@ -67,6 +67,7 @@ h2, h3, h4 {
     max-width: 1200px;
     margin: 0 auto;
     padding-bottom: 2rem;
+    position: relative; /* Asegura que el overlay-asociacion se posicione respecto a este contenedor */
 }
 
 .noticia-principal {
@@ -302,3 +303,88 @@ h2, h3, h4 {
 .noticia-terciaria:nth-child(3) { flex: var(--fib-9); }
 .noticia-terciaria:nth-child(4) { flex: var(--fib-5); }
 .noticia-terciaria:nth-child(5) { flex: var(--fib-3); }
+/* INICIO: ESTILOS PARA EL ANUNCIO TEMPORAL DE LA ASOCIACIÓN */
+.overlay-asociacion {
+    position: absolute; /* Mantiene la posición relativa al contenedor padre */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(79, 40, 80, 0.95); /* Fondo morado semitransparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100; /* Mayor que el contenido debajo pero no tan alto como el modal */
+}
+
+.contenido-anuncio {
+    background-color: white;
+    width: 80%;
+    max-width: 700px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    position: relative;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.cerrar-anuncio {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: var(--morado);
+    cursor: pointer;
+}
+
+.cerrar-anuncio:hover {
+    color: var(--verde-complementario);
+}
+
+.cabecera-anuncio {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--morado);
+    padding-bottom: 15px;
+}
+
+.logo-anuncio {
+    max-width: 100px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.cabecera-anuncio h2 {
+    color: var(--morado);
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+.mensaje-anuncio p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.mensaje-anuncio a {
+    color: var(--morado);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.mensaje-anuncio a:hover {
+    color: var(--verde-complementario);
+}
+
+.mensaje-anuncio ul {
+    margin: 15px 0;
+    padding-left: 20px;
+}
+
+.mensaje-anuncio li {
+    margin-bottom: 8px;
+}

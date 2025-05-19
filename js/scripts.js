@@ -108,3 +108,42 @@ function cerrarModal() {
     document.getElementById('modal').style.display = 'none';
     document.body.style.overflow = 'auto';
 }
+
+// INICIO: CÓDIGO PARA EL ANUNCIO TEMPORAL DE LA ASOCIACIÓN
+// Para desactivar el anuncio, cambia esta variable a false
+const mostrarAnuncioAsociacion = true;
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Control para mostrar/ocultar el anuncio
+    const anuncio = document.getElementById('anuncio-asociacion');
+    
+    if (mostrarAnuncioAsociacion && anuncio) {
+        // Mostrar el anuncio si está activado
+        anuncio.style.display = 'flex';
+        
+        // Configurar el botón para cerrar el anuncio
+        const cerrarBtn = document.getElementById('cerrar-anuncio');
+        if (cerrarBtn) {
+            cerrarBtn.addEventListener('click', function() {
+                anuncio.style.display = 'none';
+            });
+        }
+        
+        // Configurar los enlaces a noticias específicas
+        document.querySelectorAll('.enlace-noticia').forEach(function(enlace) {
+            enlace.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Obtener el ID de la noticia
+                const idNoticia = this.getAttribute('data-noticia');
+                
+                // Cerrar el anuncio
+                anuncio.style.display = 'none';
+                
+                // Mostrar la noticia correspondiente
+                mostrarNoticiaCompleta(idNoticia);
+            });
+        });
+    }
+});
+// FIN: CÓDIGO PARA EL ANUNCIO TEMPORAL DE LA ASOCIACIÓN
